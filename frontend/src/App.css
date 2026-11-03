@@ -1,0 +1,331 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+.ai-career-finder {
+  margin: 0 0 28px;
+  padding: 22px;
+  background: linear-gradient(145deg, #fff, #f7f1ff);
+  border: 1px solid var(--line, #e9e3f2);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px #33204d0a;
+}
+
+.ai-finder-heading .lede {
+  max-width: 720px;
+}
+
+.ai-finder-heading h2 {
+  margin-bottom: 6px;
+}
+
+.ai-finder-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.ai-finder-form label {
+  display: grid;
+  gap: 7px;
+  color: #5d5470;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.ai-finder-form input,
+.ai-finder-form select {
+  font: inherit;
+  padding: 11px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--line, #e9e3f2);
+  background: #fff;
+  color: inherit;
+}
+
+.ai-finder-form .btn {
+  align-self: end;
+  justify-self: start;
+  min-width: 180px;
+}
+
+.ai-finder-form .btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+
+.ai-finder-status {
+  margin: 16px 0 0;
+  color: #6b5d86;
+  font-size: 0.86rem;
+}
+
+.ai-recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.ai-recommend-card {
+  position: relative;
+  padding: 18px 16px 16px;
+  background: #fff;
+  border: 1px solid var(--line, #e9e3f2);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px #33204d08;
+}
+
+.ai-recommend-card h3 {
+  margin: 0 0 8px;
+  padding-right: 42px;
+}
+
+.ai-recommend-card p {
+  margin: 0 0 10px;
+  color: #6f687d;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.ai-recommend-mark {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #f0e8ff;
+  color: #6031b2;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.ai-recommend-card .skill-tags {
+  margin: 4px 0 12px;
+}
+
+.ai-first-step {
+  padding-top: 8px;
+  border-top: 1px solid #f0ecf4;
+}
+
+.admission-match-options {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--line, #e9e3f2);
+  border-radius: 12px;
+}
+.admission-match-options legend { padding: 0 6px; font-weight: 700; font-size: .85rem; }
+.admission-match-options p, .dataset-notice { color: #6f687d; font-size: .8rem; line-height: 1.6; }
+.admission-match-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.admission-match-fields input, .admission-match-fields select { width: 100%; min-width: 0; box-sizing: border-box; }
+.career-evidence { margin-top: 14px; border-top: 1px solid #f0ecf4; padding-top: 12px; }
+.career-evidence summary { color: #6031b2; font-size: .85rem; font-weight: 700; cursor: pointer; }
+.evidence-record { margin-top: 14px; padding: 12px; background: #faf7ff; border-radius: 10px; overflow-wrap: anywhere; }
+.evidence-record > strong { display: block; font-size: .85rem; margin-bottom: 8px; }
+.evidence-record > small { display: block; color: #6f687d; margin-top: 8px; font-size: .7rem; }
+.evidence-record a { font-size: .8rem; color: #6031b2; }
+
+@media (max-width: 900px) {
+  .ai-finder-form,
+  .ai-recommend-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-finder-form .btn {
+    width: 100%;
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 720px) {
+  .ai-career-finder {
+    padding: 16px;
+    margin-bottom: 18px;
+  }
+}
